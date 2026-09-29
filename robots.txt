@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://slovzan-download.github.io/Slovzan-/sitemap.xml
