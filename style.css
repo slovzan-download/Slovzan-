@@ -1,0 +1,265 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --pink: #ff3d81;
+    --pink-light: #ff6b9d;
+    --text: #ffffff;
+    --muted: #a9a9b5;
+    --card: rgba(255,255,255,0.055);
+    --border: rgba(255,255,255,0.09);
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 50% 0%, rgba(255,61,129,0.18), transparent 35%),
+        #08080d;
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+    width: 100%;
+    padding: 22px 6%;
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(18px);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(8,8,13,0.72);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.logo {
+    width: 36px;
+    height: 36px;
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--pink), var(--pink-light));
+    box-shadow: 0 8px 28px rgba(255,61,129,0.28);
+    font-size: 20px;
+    font-weight: 900;
+}
+
+main {
+    width: min(920px, 92%);
+    margin: auto;
+}
+
+.hero {
+    text-align: center;
+    padding: 95px 10px 55px;
+}
+
+.eyebrow {
+    color: var(--pink-light);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 8vw, 76px);
+    line-height: 1.02;
+    letter-spacing: -3px;
+    font-weight: 900;
+}
+
+.subtitle {
+    color: var(--muted);
+    font-size: 18px;
+    margin-top: 25px;
+}
+
+.version {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 7px 14px;
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    color: #cfcfd7;
+    font-size: 12px;
+}
+
+.downloads {
+    display: grid;
+    gap: 14px;
+}
+
+.download-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 21px;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    background: var(--card);
+    backdrop-filter: blur(15px);
+    transition: transform .25s ease, border-color .25s ease;
+}
+
+.download-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255,61,129,0.45);
+}
+
+.device-icon {
+    width: 54px;
+    height: 54px;
+    flex: 0 0 54px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,61,129,0.12);
+    color: var(--pink-light);
+    font-size: 21px;
+    font-weight: 900;
+}
+
+.device-info {
+    flex: 1;
+}
+
+.device-info h2 {
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.device-info p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+button {
+    border: 0;
+    border-radius: 13px;
+    padding: 12px 18px;
+    background: linear-gradient(135deg, var(--pink), var(--pink-light));
+    color: white;
+    font-weight: 800;
+    cursor: pointer;
+    white-space: nowrap;
+    box-shadow: 0 8px 25px rgba(255,61,129,0.2);
+}
+
+button:hover {
+    filter: brightness(1.08);
+}
+
+.web-app {
+    margin: 70px 0;
+    padding: 45px 25px;
+    text-align: center;
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    background: linear-gradient(
+        135deg,
+        rgba(255,61,129,0.12),
+        rgba(255,255,255,0.035)
+    );
+}
+
+.web-app h2 {
+    font-size: 28px;
+}
+
+.web-app p {
+    color: var(--muted);
+    margin: 12px 0 23px;
+}
+
+footer {
+    text-align: center;
+    padding: 35px 20px;
+    border-top: 1px solid var(--border);
+    color: #777783;
+    font-size: 12px;
+}
+
+@media (max-width: 600px) {
+    .hero {
+        padding-top: 70px;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .download-card {
+        padding: 17px;
+    }
+
+    .device-icon {
+        width: 46px;
+        height: 46px;
+        flex-basis: 46px;
+    }
+
+    .download-card button {
+        padding: 10px 12px;
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 430px) {
+    .download-card {
+        flex-wrap: wrap;
+    }
+
+    .device-info {
+        min-width: calc(100% - 64px);
+    }
+
+    .download-card button {
+        width: 100%;
+    }
+}
+
+.download-card {
+    position: relative;
+}
+
+.your-device {
+    border-color: rgba(255, 61, 129, 0.65);
+    box-shadow: 0 12px 40px rgba(255, 61, 129, 0.10);
+}
+
+.your-device-badge {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    padding: 5px 9px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #ff3d81, #ff6b9d);
+    color: #fff;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 0.7px;
+    box-shadow: 0 5px 18px rgba(255, 61, 129, 0.25);
+}
+
+@media (max-width: 430px) {
+    .your-device-badge {
+        top: 10px;
+        right: 12px;
+        font-size: 8px;
+    }
+}
+
